@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/ic_breastfeeding"
+            android:title="@string/breastfeeding_timer" />
+        <item
+            android:id="@+id/nav_feeding_log"
+            android:icon="@drawable/ic_notebook_log"
+            android:title="@string/feeding_log" />
+        <item
+            android:id="@+id/nav_weight"
+            android:icon="@drawable/ic_baby_scale"
+            android:title="@string/weight_tracker" />
+        <item
+            android:id="@+id/nav_tips"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="@string/breastfeeding_tips" />
+        <item
+            android:id="@+id/nav_services"
+            android:icon="@drawable/ic_live_help_black_24dp"
+            android:title="@string/sanford_services" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/tools" />
+    </group>
+
+</menu>
