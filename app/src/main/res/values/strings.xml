@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Nutrio</string>
     <string name="user">User</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -14,4 +13,8 @@
     <string name="breastfeeding_timer">Breastfeeding Timer</string>
     <string name="breastfeeding_tips">Breastfeeding Tips</string>
     <string name="sanford_services">Sanford Services</string>
+    <string name="background">background</string>
+    <string name="new_arrivals_group">New Arrivals Group</string>
+    <string name="feeding_support_line">Breastfeeding Support Line</string>
+    <string name="new_baby_and_me_group">New Baby and Me Group</string>
 </resources>

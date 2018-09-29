@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Services"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabBackground="@color/divider"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat"
+            app:tabTextColor="@color/primary_text">
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_support_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breastfeeding Support Line" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_new_arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Arrival Group" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tab_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Baby and Me Group" />
+        </android.support.design.widget.TabLayout>
+
+    </android.support.v4.view.ViewPager>
+
+</android.support.constraint.ConstraintLayout>
