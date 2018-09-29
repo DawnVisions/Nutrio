@@ -1,28 +1,34 @@
 package com.dawnvisions.nutrio;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Services extends Navi
+public class Services extends Fragment
 {
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        setContentView(R.layout.activity_services);
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_services, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Sanford Services");
 
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new NewArrivalsFragment());
@@ -34,9 +40,9 @@ public class Services extends Navi
         fragmentTitleList.add(getString(R.string.feeding_support_line));
         fragmentTitleList.add(getString(R.string.new_baby_and_me_group));
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        ViewPager viewPager = findViewById(R.id.pager);
-        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager())
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        ViewPager viewPager = view.findViewById(R.id.pager);
+        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getFragmentManager())
         {
             @Override
             public Fragment getItem(int i)
@@ -60,4 +66,6 @@ public class Services extends Navi
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
+
+
 }

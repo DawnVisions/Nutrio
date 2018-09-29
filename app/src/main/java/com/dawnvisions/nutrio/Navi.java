@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -38,10 +40,16 @@ public class Navi extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = menuItem.getItemId();
 
+        //creating fragment object
+        Fragment fragment = null;
+
+
+
         if (id == R.id.nav_timer) {
-            // Breastfeeding timer
+            fragment = new Timer();
+
         } else if (id == R.id.nav_feeding_log) {
-            //Feeding log
+            fragment = new Log();
 
         } else if (id == R.id.nav_weight) {
             //Weight tracker
@@ -49,15 +57,35 @@ public class Navi extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_tips) {
-            //Breastfeeding tips
+            fragment = new Tips();
 
         } else if (id == R.id.nav_services) {
-            Intent intent = new Intent(this, Services.class);
-            startActivity(intent);
+            fragment = new Services();
+        }
+
+        //replacing the fragment
+        if (fragment != null)
+        {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        } else
+        {
+            super.onBackPressed();
+        }
     }
 }
