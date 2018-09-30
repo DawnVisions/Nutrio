@@ -52,7 +52,7 @@ public class Navi extends AppCompatActivity
             fragment = new Log();
 
         } else if (id == R.id.nav_weight) {
-            //Weight tracker
+            fragment = new WeightTracker();
 
         } else if (id == R.id.nav_manage) {
 

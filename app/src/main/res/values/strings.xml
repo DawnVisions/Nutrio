@@ -23,4 +23,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="start_left">Start Left</string>
     <string name="start_right">Start Right</string>
+    <string name="enter_today_s_weight">Enter today\'s weight</string>
 </resources>
