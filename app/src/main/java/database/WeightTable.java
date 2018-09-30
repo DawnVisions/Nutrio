@@ -10,6 +10,10 @@ public class WeightTable
     public static final String COLUMN_WEIGHT_G = "grams";
     public static final String COLUMN_WEIGHT_LB = "pound";
     public static final String COLUMN_WEIGHT_OZ = "ounce";
+
+    public static final String[] ALL_COLUMNS = {COLUMN_ID, COLUMN_YEAR, COLUMN_MONTH, COLUMN_DAY, COLUMN_WEIGHT_G, COLUMN_WEIGHT_LB, COLUMN_WEIGHT_OZ};
+
+
     public static final String SQL_CREATE =
             "CREATE TABLE " + TABLE_ITEMS + "(" +
                     COLUMN_ID + " TEXT PRIMARY KEY," +

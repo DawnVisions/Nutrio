@@ -102,6 +102,11 @@ public class Weight
         this.ounce = ounce;
     }
 
+    public Weight()
+    {
+
+    }
+
     public ContentValues toValues()
     {
         ContentValues values = new ContentValues(7);

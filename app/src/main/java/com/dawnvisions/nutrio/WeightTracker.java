@@ -1,15 +1,10 @@
 package com.dawnvisions.nutrio;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +16,8 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 
-import database.DBHelper;
 import database.DataSource;
 import model.Weight;
 
@@ -50,8 +44,14 @@ public class WeightTracker extends Fragment
 
         final EditText enteredWeight = view.findViewById(R.id.enter_weight);
         final ToggleButton lbToggle = view.findViewById(R.id.off_lb_toggle);
-        final TextView tv = view.findViewById(R.id.textView6);
+        final TextView tv = view.findViewById(R.id.weight_output_text);
 
+
+        //Binds recycler view to WeightViewAdapter for weights in the database
+        final List<Weight> allWeights = database.getAllWeights();
+        final WeightViewAdapter adapter = new WeightViewAdapter(view.getContext(), allWeights);
+        RecyclerView recyclerView = view.findViewById(R.id.weight_recycler);
+        recyclerView.setAdapter(adapter);
 
 
         //Checkmark from keyboard pressed, number entered
@@ -60,8 +60,7 @@ public class WeightTracker extends Fragment
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event)
             {
-                
-                if(keyCode == KeyEvent.KEYCODE_ENTER )
+                if(keyCode == KeyEvent.KEYCODE_ENTER && event.getAction()== KeyEvent.ACTION_DOWN )
                 {
                     //Hide the keyboard
                     InputMethodManager inputManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -94,6 +93,8 @@ public class WeightTracker extends Fragment
                             poundsToDatabase(weightLb, weightOz);
                         }
                     }
+                    adapter.dataChanged(database.getAllWeights());
+                    adapter.notifyDataSetChanged();
                     return true;
                 }
                 return false;
@@ -104,12 +105,12 @@ public class WeightTracker extends Fragment
     private boolean gramsToDatabase(Double weight)
     {
         //convert grams to lb and oz
-        Integer gram = Integer.parseInt(weight.toString());
+        Integer gram = weight.intValue();
         Double ounceDouble = weight * 0.035274;
+        Integer ounce = ounceDouble.intValue();
         Double poundDouble = Math.floor(ounceDouble/16);
-        Integer pound = Integer.parseInt(poundDouble.toString());
-        ounceDouble = ounceDouble - pound;
-        Integer ounce = Integer.parseInt(ounceDouble.toString().substring(2));
+        Integer pound = poundDouble.intValue();
+        ounce = ounce % 16;
 
         Calendar today = Calendar.getInstance();
 
@@ -121,6 +122,7 @@ public class WeightTracker extends Fragment
                 pound,
                 ounce);
         database.createWeight(newWeight);
+
         return true;
     }
 
