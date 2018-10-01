@@ -1,7 +1,6 @@
 package com.dawnvisions.nutrio;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +13,7 @@ import android.widget.EditText;
 
 import database.DataSource;
 
-public class Main extends Navi
+public class Main extends Navigation
     implements NavigationView.OnNavigationItemSelectedListener
 {
     public DataSource mDataSource;
