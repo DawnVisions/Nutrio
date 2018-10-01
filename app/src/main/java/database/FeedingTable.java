@@ -9,12 +9,13 @@ public class FeedingTable
     public static final String COLUMN_DAY = "day";
     public static final String COLUMN_TIME_HOUR = "hour";
     public static final String COLUMN_TIME_MIN = "min";
+    public static final String COLUMN_TIME_AM_PM = "am_pm";
     public static final String COLUMN_TYPE = "type";
     public static final String COLUMN_AMOUNT = "amount";
     public static final String COLUMN_SIDE = "side";
 
     public static final String[] ALL_COLUMNS = {COLUMN_ID, COLUMN_YEAR, COLUMN_MONTH, COLUMN_DAY,
-            COLUMN_TIME_HOUR, COLUMN_TIME_MIN, COLUMN_TYPE, COLUMN_AMOUNT, COLUMN_SIDE};
+            COLUMN_TIME_HOUR, COLUMN_TIME_MIN, COLUMN_TIME_AM_PM, COLUMN_TYPE, COLUMN_AMOUNT, COLUMN_SIDE};
 
 
     public static final String SQL_CREATE =
@@ -25,6 +26,7 @@ public class FeedingTable
                     COLUMN_DAY + " INTEGER," +
                     COLUMN_TIME_HOUR + " INTEGER," +
                     COLUMN_TIME_MIN + " INTEGER," +
+                    COLUMN_TIME_AM_PM + " TEXT," +
                     COLUMN_TYPE + " TEXT," +
                     COLUMN_AMOUNT + " TEXT," +
                     COLUMN_SIDE + " TEXT" + ");";

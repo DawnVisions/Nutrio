@@ -83,6 +83,7 @@ public class DataSource
             feeding.setDay(cursor.getInt(cursor.getColumnIndex(FeedingTable.COLUMN_DAY)));
             feeding.setHour(cursor.getInt(cursor.getColumnIndex(FeedingTable.COLUMN_TIME_HOUR)));
             feeding.setMin(cursor.getInt(cursor.getColumnIndex(FeedingTable.COLUMN_TIME_MIN)));
+            feeding.setAm_pm(cursor.getString(cursor.getColumnIndex(FeedingTable.COLUMN_TIME_AM_PM)));
             feeding.setType(cursor.getString(cursor.getColumnIndex(FeedingTable.COLUMN_TYPE)));
             feeding.setAmount(cursor.getString(cursor.getColumnIndex(FeedingTable.COLUMN_AMOUNT)));
             feeding.setSide(cursor.getString(cursor.getColumnIndex(FeedingTable.COLUMN_SIDE)));

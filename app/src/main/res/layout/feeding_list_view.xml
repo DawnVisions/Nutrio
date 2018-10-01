@@ -20,12 +20,12 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="mm/dd"
-            app:layout_constraintStart_toEndOf="@+id/feeding_time"
+            app:layout_constraintStart_toEndOf="@+id/enter_feeding_time"
             tools:ignore="HardcodedText"
             tools:layout_editor_absoluteY="0dp" />
 
         <TextView
-            android:id="@+id/feeding_time"
+            android:id="@+id/enter_feeding_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

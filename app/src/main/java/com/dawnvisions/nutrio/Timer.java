@@ -138,13 +138,23 @@ public class Timer extends Fragment
             public void onClick(View v)
             {
                 Calendar today = Calendar.getInstance();
+                String am_pm;
+                if(today.get(Calendar.AM_PM) == Calendar.AM)
+                {
+                    am_pm = "am";
+                }
+                else
+                {
+                    am_pm = "pm";
+                }
 
                 Feeding newFeeding = new Feeding(
                         today.get(Calendar.YEAR),
                         today.get(Calendar.MONTH),
                         today.get(Calendar.DATE),
-                        today.get(Calendar.HOUR_OF_DAY),
+                        today.get(Calendar.HOUR),
                         today.get(Calendar.MINUTE),
+                        am_pm,
                         "Breast",
                         feedingTime,
                         feedingSide);

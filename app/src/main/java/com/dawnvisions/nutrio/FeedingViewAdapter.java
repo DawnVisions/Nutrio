@@ -34,31 +34,11 @@ public class FeedingViewAdapter extends RecyclerView.Adapter<FeedingViewAdapter.
     @Override
     public void onBindViewHolder(FeedingViewAdapter.ViewHolder holder, int position)
     {
-        String time;
-        String am_pm = "am";
-
         Feeding item = feedings.get(position);
 
-        //Changing from military time
-        if(item.getHour() > 12 ) {
-            Integer timeInt = (item.getHour() - 12);
-            time = timeInt.toString() + ":" + String.format("%02d", item.getMin());
-            am_pm = "pm";
-        }
-        else if(item.getHour() == 0) {
-            time = "12:" + item.getMin();
-        }
-        else if(item.getHour() == 12) {
-            am_pm = "pm";
-            time = item.getHour().toString() + ":" + item.getMin().toString();
-        }
-        else {
-            time = item.getHour().toString() + ":" + item.getMin().toString();
-        }
-
         holder.dateTv.setText(item.getMonth() + "/" + item.getDay() + "/" + item.getYear().toString().substring(2));
-        holder.timeTv.setText(time);
-        holder.am_pmTv.setText(am_pm);
+        holder.timeTv.setText(item.getHour() + ":" + item.getMin());
+        holder.am_pmTv.setText(item.getAm_pm());
         holder.typeTv.setText(item.getType());
         holder.amountTv.setText(item.getAmount());
         holder.sideTv.setText(item.getSide());
@@ -83,7 +63,7 @@ public class FeedingViewAdapter extends RecyclerView.Adapter<FeedingViewAdapter.
             super(itemView);
 
             dateTv = itemView.findViewById(R.id.feeding_date);
-            timeTv = itemView.findViewById(R.id.feeding_time);
+            timeTv = itemView.findViewById(R.id.enter_feeding_time);
             am_pmTv = itemView.findViewById(R.id.feeding_ampm);
             typeTv = itemView.findViewById(R.id.feeding_type);
             amountTv = itemView.findViewById(R.id.feeding_amount);

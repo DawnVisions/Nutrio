@@ -20,6 +20,7 @@ public class Feeding
     private Integer day;
     private Integer hour;
     private Integer min;
+    private String am_pm;
     private String type;
     private String amount;
     private String side;
@@ -28,7 +29,7 @@ public class Feeding
     {
     }
 
-    public Feeding(Integer year, Integer month, Integer day, Integer hour, Integer min, String type, String amount, String side)
+    public Feeding(Integer year, Integer month, Integer day, Integer hour, Integer min, String am_pm, String type, String amount, String side)
     {
         id = UUID.randomUUID().toString();
         this.year = year;
@@ -36,6 +37,7 @@ public class Feeding
         this.day = day;
         this.hour = hour;
         this.min = min;
+        this.am_pm = am_pm;
         this.type = type;
         this.amount = amount;
         this.side = side;
@@ -101,6 +103,16 @@ public class Feeding
         this.min = min;
     }
 
+    public String getAm_pm()
+    {
+        return am_pm;
+    }
+
+    public void setAm_pm(String am_pm)
+    {
+        this.am_pm = am_pm;
+    }
+
     public String getType()
     {
         return type;
@@ -140,6 +152,7 @@ public class Feeding
         values.put(FeedingTable.COLUMN_DAY, day);
         values.put(FeedingTable.COLUMN_TIME_HOUR, hour);
         values.put(FeedingTable.COLUMN_TIME_MIN, min);
+        values.put(FeedingTable.COLUMN_TIME_AM_PM, am_pm);
         values.put(FeedingTable.COLUMN_TYPE, type);
         values.put(FeedingTable.COLUMN_AMOUNT, amount);
         values.put(FeedingTable.COLUMN_SIDE, side);

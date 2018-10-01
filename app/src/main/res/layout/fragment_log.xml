@@ -41,7 +41,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/feeding_date"
+                    android:id="@+id/enter_feeding_date"
                     android:layout_width="177dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -49,12 +49,20 @@
                     android:inputType="date" />
 
                 <EditText
-                    android:id="@+id/feeding_time"
+                    android:id="@+id/enter_feeding_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Time"
                     android:inputType="time" />
+
+                <ToggleButton
+                    android:id="@+id/am_pm_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton"
+                    android:textOff="am"
+                    android:textOn="pm" />
             </TableRow>
 
             <TableRow
@@ -70,7 +78,7 @@
                     android:textOn="Breast" />
 
                 <EditText
-                    android:id="@+id/feeding_amount"
+                    android:id="@+id/enter_feeding_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -91,7 +99,7 @@
                     android:textOn="Right" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/add_manual_feeding_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/holo_green_light"
