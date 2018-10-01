@@ -11,15 +11,26 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
+
+import java.util.Calendar;
+
+import database.DataSource;
+import model.Feeding;
+import model.Weight;
 
 
 public class Timer extends Fragment
 {
+    DataSource database;
 
     //Used for setting the timer again after a pause or stop
     private long timeWhenStopped= 0;
+
+    String feedingSide;
+    String feedingTime;
 
     @Nullable
     @Override
@@ -33,6 +44,9 @@ public class Timer extends Fragment
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Breastfeeding Timer");
 
+        Main activity = (Main)getActivity();
+        database = activity.mDataSource;
+
         final Chronometer chronometer = view.findViewById(R.id.timer_view);
         final FloatingActionButton LeftStartFab = view.findViewById(R.id.start_left_fab);
         final FloatingActionButton RightStartFab = view.findViewById(R.id.start_right_fab);
@@ -41,6 +55,7 @@ public class Timer extends Fragment
         final TextView startLeft = view.findViewById(R.id.start_left_text);
         final TextView startRight = view.findViewById(R.id.start_right_text);
         final TextView output = view.findViewById(R.id.output_text_view);
+        final Button addButton = view.findViewById(R.id.add_to_log_button);
 
         //Start left button pressed
         LeftStartFab.setOnClickListener(new View.OnClickListener()
@@ -56,6 +71,8 @@ public class Timer extends Fragment
                 startRight.setText("");
                 startLeft.setText("Left");
                 output.setText("Timer running");
+                addButton.setVisibility(View.INVISIBLE);
+                feedingSide = "Left";
             }
         });
 
@@ -72,6 +89,8 @@ public class Timer extends Fragment
                 startRight.setText("Right");
                 startLeft.setText("");
                 output.setText("Timer running");
+                addButton.setVisibility(View.INVISIBLE);
+                feedingSide = "Right";
             }
         });
 
@@ -98,14 +117,8 @@ public class Timer extends Fragment
             {
                 chronometer.stop();
                 timeWhenStopped = 0;
-                if(LeftStartFab.isOrWillBeHidden())
-                {
-                    output.setText("Fed on the Right for " + chronometer.getText());
-                }
-                else if(RightStartFab.isOrWillBeHidden())
-                {
-                    output.setText("Fed on the Left for " + chronometer.getText());
-                }
+                feedingTime = chronometer.getText().toString();
+                output.setText("Fed on the " + feedingSide + " for " + feedingTime);
                 chronometer.setText("00:00");
                 pauseFab.hide();
                 stopFab.hide();
@@ -113,7 +126,32 @@ public class Timer extends Fragment
                 RightStartFab.show();
                 startLeft.setText(R.string.start_left);
                 startRight.setText(R.string.start_right);
+                addButton.setVisibility(View.VISIBLE);
 
+            }
+        });
+
+        //Adds feeding to feeding log
+        addButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Calendar today = Calendar.getInstance();
+
+                Feeding newFeeding = new Feeding(
+                        today.get(Calendar.YEAR),
+                        today.get(Calendar.MONTH),
+                        today.get(Calendar.DATE),
+                        today.get(Calendar.HOUR_OF_DAY),
+                        today.get(Calendar.MINUTE),
+                        "Breast",
+                        feedingTime,
+                        feedingSide);
+                database.createFeeding(newFeeding);
+
+                output.setText("Feeding added to Feeding Log");
+                addButton.setVisibility(View.INVISIBLE);
             }
         });
     }

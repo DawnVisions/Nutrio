@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/feeding_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="mm/dd"
+            app:layout_constraintStart_toEndOf="@+id/feeding_time"
+            tools:ignore="HardcodedText"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/feeding_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="2dp"
+            android:text="00:00"
+            tools:ignore="HardcodedText"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/feeding_ampm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
+            android:paddingRight="8dp"
+            android:text="am"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/feeding_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Bottle"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/feeding_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/feeding_side"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Left"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

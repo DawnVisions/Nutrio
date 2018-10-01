@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper
 {
 
-    public static final String DB_FILE_NAME = "weights.db";
+    public static final String DB_FILE_NAME = "data.db";
+
     public static final int DB_VERSION = 1;
 
     public DBHelper(Context context)
@@ -18,6 +19,7 @@ public class DBHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
+        db.execSQL(FeedingTable.SQL_CREATE);
         db.execSQL(WeightTable.SQL_CREATE);
     }
 

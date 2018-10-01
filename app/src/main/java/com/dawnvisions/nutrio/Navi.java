@@ -1,6 +1,5 @@
 package com.dawnvisions.nutrio;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -49,7 +48,7 @@ public class Navi extends AppCompatActivity
             fragment = new Timer();
 
         } else if (id == R.id.nav_feeding_log) {
-            fragment = new Log();
+            fragment = new FeedingLog();
 
         } else if (id == R.id.nav_weight) {
             fragment = new WeightTracker();
