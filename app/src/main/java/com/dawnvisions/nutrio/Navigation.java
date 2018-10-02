@@ -53,8 +53,6 @@ public class Navigation extends AppCompatActivity
         } else if (id == R.id.nav_weight) {
             fragment = new WeightTracker();
 
-        } else if (id == R.id.nav_manage) {
-
         } else if (id == R.id.nav_tips) {
             fragment = new Tips();
 

@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ic_launcher_background"
     tools:context=".GroupFragment"
     tools:layout_editor_absoluteY="81dp">
 
@@ -55,12 +56,20 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="157dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="94dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Women's Health Plaza 5019 S. Western Ave., Suite 200 Sioux Falls, SD"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_womens_logo"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

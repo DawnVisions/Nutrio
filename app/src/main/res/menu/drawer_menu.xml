@@ -25,10 +25,6 @@
             android:id="@+id/nav_services"
             android:icon="@drawable/ic_live_help_black_24dp"
             android:title="@string/sanford_services" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/tools" />
     </group>
 
 </menu>

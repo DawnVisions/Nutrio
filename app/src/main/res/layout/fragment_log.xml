@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/divider"
     tools:context=".FeedingLog">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:text="Add a Feeding"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -18,15 +20,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:cardBackgroundColor="@color/divider"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="#f1f0f0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,16 +43,16 @@
 
                 <EditText
                     android:id="@+id/enter_feeding_date"
-                    android:layout_width="177dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="184dp"
+                    android:layout_height="48dp"
                     android:ems="10"
                     android:hint="Date"
                     android:inputType="date" />
 
                 <EditText
                     android:id="@+id/enter_feeding_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="103dp"
+                    android:layout_height="match_parent"
                     android:ems="10"
                     android:hint="Time"
                     android:inputType="time" />
@@ -71,24 +72,11 @@
 
                 <ToggleButton
                     android:id="@+id/breast_bottle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="184dp"
                     android:layout_height="wrap_content"
                     android:text="ToggleButton"
                     android:textOff="Bottle"
                     android:textOn="Breast" />
-
-                <EditText
-                    android:id="@+id/enter_feeding_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Amount (min or mL)"
-                    android:inputType="number" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <ToggleButton
                     android:id="@+id/Left_Right"
@@ -97,6 +85,25 @@
                     android:text="ToggleButton"
                     android:textOff="Left"
                     android:textOn="Right" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/enter_feeding_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Amount (min or mL)"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/add_manual_feeding_button"
