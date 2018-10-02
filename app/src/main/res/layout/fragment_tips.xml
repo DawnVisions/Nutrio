@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/divider"
@@ -24,8 +23,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
-        android:layout_width="400dp"
-        android:layout_height="545dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:padding="8dp"
@@ -38,7 +37,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/advent_pro_light"
@@ -60,7 +58,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="A - Assistance"
@@ -72,7 +69,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView16"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Your baby will need to learn how to position your breast far back in his or her mouth, so that he can feed effectively, not just use the nipple as a pacifier." />
@@ -83,7 +79,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView17"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="B - Breastmilk"
@@ -96,7 +91,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView18"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="The small amount of colostrum (or early milk) less than a teaspoon is about what a baby takes with each good breastfeeding in the first couple of days. That amount is exactly right to meet his needs." />
@@ -108,7 +102,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView19"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="C- Contact"
@@ -120,7 +113,6 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView20"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Research shows that holding your baby skin to skin helps your baby sleep more, helps your baby to learn to breastfeed sooner, keeps your baby at the perfect temperature, and increases your milk supply.  " />
@@ -130,7 +122,6 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView5"
                 android:layout_width="134dp"
                 android:layout_height="115dp"
                 android:layout_margin="16dp"
@@ -143,7 +134,6 @@
                 tools:layout_editor_absoluteY="340dp" />
 
             <TextView
-                android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/advent_pro_light"
@@ -160,7 +150,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Remember that milk production increases by the end of the third or fourth day. Some signs that you are producing enough milk are:" />
@@ -171,7 +160,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView23"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="You will hear your baby swallowing fairly often." />
@@ -182,7 +170,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="By the fifth to sixth day, your baby will have several liquid or curdled BRIGHT YELLOW bowel movements and many wet diapers." />
@@ -193,7 +180,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView25"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="By the fifth day, your baby will nurse vigorously and then fall asleep without fussing. (If he is still sucking on his fists or needing a pacifier, he is still hungry.)" />
@@ -205,7 +191,6 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView26"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Babies normally lose weight during the first week and regain their birth weight by about day ten." />
