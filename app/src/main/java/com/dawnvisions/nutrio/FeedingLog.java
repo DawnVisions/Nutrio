@@ -62,7 +62,7 @@ public class FeedingLog extends Fragment
 
         //Set date EditText and time EditText to current date
         Calendar today = Calendar.getInstance();
-        date.setText(today.get(Calendar.MONTH) + "/" + today.get(Calendar.DATE) + "/" + today.get(Calendar.YEAR));
+        date.setText(today.get(Calendar.MONTH)+1 + "/" + today.get(Calendar.DATE) + "/" + today.get(Calendar.YEAR));
         time.setText(today.get(Calendar.HOUR) + ":" + today.get(Calendar.MINUTE));
         am_pmToggle.setChecked(today.get(Calendar.AM_PM) == Calendar.PM);
 

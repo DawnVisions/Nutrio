@@ -13,12 +13,15 @@
         android:id="@+id/cardView2"
         android:layout_width="352dp"
         android:layout_height="170dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#9e9e9e"
-        app:layout_constraintBottom_toTopOf="@+id/output_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/start_right_fab"
@@ -127,25 +130,24 @@
         android:id="@+id/output_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="Click start to time a feeding"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/add_to_log_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/add_to_log_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="44dp"
         android:text="Add to Feeding Log"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
 </android.support.constraint.ConstraintLayout>

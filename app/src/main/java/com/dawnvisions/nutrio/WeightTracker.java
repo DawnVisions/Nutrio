@@ -116,7 +116,7 @@ public class WeightTracker extends Fragment
 
         Weight newWeight = new Weight(
                 today.get(Calendar.YEAR),
-                today.get(Calendar.MONTH),
+                today.get(Calendar.MONTH)+1,
                 today.get(Calendar.DATE),
                 gram,
                 pound,
@@ -136,7 +136,7 @@ public class WeightTracker extends Fragment
 
         Weight newWeight = new Weight(
                 today.get(Calendar.YEAR),
-                today.get(Calendar.MONTH),
+                today.get(Calendar.MONTH)+1,
                 today.get(Calendar.DATE),
                 gram,
                 pound,

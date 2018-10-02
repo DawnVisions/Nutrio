@@ -36,7 +36,7 @@ public class FeedingViewAdapter extends RecyclerView.Adapter<FeedingViewAdapter.
     {
         Feeding item = feedings.get(position);
 
-        holder.dateTv.setText(item.getMonth() + "/" + item.getDay() + "/" + item.getYear().toString().substring(2));
+        holder.dateTv.setText(item.getMonth() + "/" + item.getDay());
         holder.timeTv.setText(item.getHour() + ":" + item.getMin());
         holder.am_pmTv.setText(item.getAm_pm());
         holder.typeTv.setText(item.getType());

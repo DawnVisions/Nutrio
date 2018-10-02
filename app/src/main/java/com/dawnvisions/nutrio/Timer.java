@@ -150,7 +150,7 @@ public class Timer extends Fragment
 
                 Feeding newFeeding = new Feeding(
                         today.get(Calendar.YEAR),
-                        today.get(Calendar.MONTH),
+                        today.get(Calendar.MONTH)+1,
                         today.get(Calendar.DATE),
                         today.get(Calendar.HOUR),
                         today.get(Calendar.MINUTE),

@@ -12,6 +12,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import database.DataSource;
+import database.SampleData;
+import model.Feeding;
+import model.Weight;
 
 public class Main extends Navigation
     implements NavigationView.OnNavigationItemSelectedListener
@@ -25,6 +28,16 @@ public class Main extends Navigation
         super.onCreate(savedInstanceState);
         mDataSource = new DataSource(this);
         mDataSource.open();
+
+        //Sample data for app
+        for (Weight weight : SampleData.sampleWeights)
+        {
+            mDataSource.createWeight(weight);
+        }
+        for(Feeding feeding : SampleData.sampleFeedings)
+        {
+            mDataSource.createFeeding(feeding);
+        }
 
     }
 

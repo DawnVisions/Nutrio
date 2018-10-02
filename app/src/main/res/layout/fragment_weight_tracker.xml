@@ -12,6 +12,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:text="Enter Today's Weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
@@ -64,45 +65,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/off_lb_toggle" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="208dp"
+    <FrameLayout
+        android:layout_width="377dp"
+        android:layout_height="216dp"
         android:layout_margin="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/primary_dark"
-        android:src="@color/primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/weight_output_text"
+        app:layout_constraintVertical_bias="0.729">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/weight_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="198dp"
-        android:layout_margin="8dp"
-        android:background="@color/divider"
-        android:hapticFeedbackEnabled="true"
-        android:isScrollContainer="true"
-        android:padding="8dp"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.666">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/weight_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="196dp"
+            android:layout_margin="8dp"
+            android:background="@color/divider"
+            android:hapticFeedbackEnabled="true"
+            android:isScrollContainer="true"
+            android:padding="8dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.666">
 
-    </android.support.v7.widget.RecyclerView>
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
+        </android.support.v7.widget.RecyclerView>
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
